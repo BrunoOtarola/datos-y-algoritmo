@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Otarola - Python</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Estructura de Datos y Algoritmos</h1>
+        <p>Guía interactiva de Bruno Otárola para Estudiantes - Santo Tomás</p>
+    </div>
+
+    <!-- 1. VARIABLES -->
+    <div class="section">
+        <h2>1. Variables y Tipos de Datos</h2>
+        <p>Las variables son "cajas" con nombre. En Python, el tipo de dato se define automáticamente según lo que guardes:</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Tipos Comunes</h3>
+                <ul>
+                    <li><b>int:</b> Enteros (5, -10)</li>
+                    <li><b>float:</b> Decimales (3.14)</li>
+                    <li><b>str:</b> Texto ("Hola")</li>
+                    <li><b>bool:</b> Lógica (True, False)</li>
+                </ul>
+            </div>
+        </div>
+        <pre>
+nombre = <span class="string">"Bruno"</span>      <span class="comment"># Esto es un str</span>
+puntos = <span class="op">10</span>           <span class="comment"># Esto es un int</span>
+precio = <span class="op">19.99</span>        <span class="comment"># Esto es un float</span></pre>
+    </div>
+
+    <!-- 2. OPERADORES -->
+    <div class="section">
+        <h2>2. Operadores y Comparaciones</h2>
+        <p>Usamos operadores para cálculos y comparaciones lógicas.</p>
+        <table>
+            <tr><th>Tipo</th><th>Operadores</th></tr>
+            <tr><td>Matemáticos</td><td>+ , - , * , / , ** (potencia)</td></tr>
+            <tr><td>Comparación</td><td>== (igual), != (distinto), > , < </td></tr>
+            <tr><td>Lógicos</td><td>and (y), or (o)</td></tr>
+        </table>
+        <div class="tip">
+            <strong>RECUERDA:</strong> <code>=</code> es para guardar (asignar) y <code>==</code> es para preguntar si son iguales.
+        </div>
+    </div>
+
+    <!-- 3. INPUT/PRINT -->
+    <div class="section">
+        <h2>3. Entrada y Salida (Input / Print)</h2>
+        <p>Para recibir datos usamos <code>input()</code>, pero recuerda que siempre recibe texto. Si quieres números, debes hacer <b>Casting</b>:</p>
+        <pre>
+<span class="comment"># Convertimos el texto de entrada en un número entero</span>
+edad = <span class="func">int</span>(<span class="func">input</span>(<span class="string">"Dime tu edad: "</span>))
+
+<span class="comment"># Mostramos el resultado</span>
+<span class="func">print</span>(<span class="string">"El próximo año tendrás:"</span>, edad + 1)</pre>
+    </div>
+
+    <!-- 4. CONDICIONALES -->
+    <div class="section">
+        <h2>4. Lógica: IF, ELIF y ELSE</h2>
+        <p>Permite que el programa tome diferentes caminos según se cumpla o no una condición.</p>
+        <pre>
+<span class="keyword">if</span> edad >= <span class="op">18</span>:
+    <span class="func">print</span>(<span class="string">"Eres mayor de edad"</span>)
+<span class="keyword">elif</span> edad > <span class="op">12</span>:
+    <span class="func">print</span>(<span class="string">"Eres adolescente"</span>)
+<span class="keyword">else</span>:
+    <span class="func">print</span>(<span class="string">"Eres un niño"</span>)</pre>
+    </div>
+
+    <!-- 5. CALCULADORA -->
+    <div class="section">
+        <h2>5. Proyecto: Calculadora Completa</h2>
+        <p>Unimos todo: Inputs, Casting de Floats, Menú y Lógica Condicional.</p>
+        <pre>
+<span class="comment"># 1. Pedir números</span>
+n1 = <span class="func">float</span>(<span class="func">input</span>(<span class="string">"Número 1: "</span>))
+n2 = <span class="func">float</span>(<span class="func">input</span>(<span class="string">"Número 2: "</span>))
+
+<span class="comment"># 2. Menú</span>
+<span class="func">print</span>(<span class="string">"Seleccione: 1.Suma | 2.Resta | 3.Div"</span>)
+op = <span class="func">input</span>(<span class="string">"Opción: "</span>)
+
+<span class="comment"># 3. Proceso</span>
+<span class="keyword">if</span> op == <span class="string">"1"</span>:
+    <span class="func">print</span>(<span class="string">"Suma:"</span>, n1 + n2)
+<span class="keyword">elif</span> op == <span class="string">"2"</span>:
+    <span class="func">print</span>(<span class="string">"Resta:"</span>, n1 - n2)
+<span class="keyword">elif</span> op == <span class="string">"3"</span>:
+    <span class="keyword">if</span> n2 != 0:
+        <span class="func">print</span>(<span class="string">"División:"</span>, n1 / n2)
+    <span class="keyword">else</span>:
+        <span class="func">print</span>(<span class="string">"Error: No se divide por cero"</span>)
+<span class="keyword">else</span>:
+    <span class="func">print</span>(<span class="string">"Opción inválida"</span>)</pre>
+    </div>
+
+    <!-- 6. POO -->
+    <div class="section">
+        <h2>6. Programación Orientada a Objetos (POO)</h2>
+        <p>Organizamos el código simulando objetos del mundo real mediante <b>Clases</b> (moldes).</p>
+        <pre>
+<span class="keyword">class</span> <span style="color: #f0883e">Gato</span>:
+    <span class="keyword">def</span> <span class="func">__init__</span>(self, nombre, color):
+        self.nombre = nombre <span class="comment"># Atributo</span>
+        self.color = color
+
+    <span class="keyword">def</span> <span class="func">maullar</span>(self): <span class="comment"># Método (acción)</span>
+        <span class="func">print</span>(self.nombre, <span class="string">"dice: ¡Miau!"</span>)
+
+<span class="comment"># Crear el objeto (Instanciar)</span>
+mi_mascota = Gato(<span class="string">"Toby"</span>, <span class="string">"Blanco"</span>)
+mi_mascota.maullar()</pre>
+    </div>
+
+    <div class="section" style="text-align: center; background: #e2e8f0;">
+        <p><b>Prof. Bruno Otárola</b> - <i>"A un problema, hay una solución."</i></p>
+    </div>
+</div>
+
+</body>
+</html>
